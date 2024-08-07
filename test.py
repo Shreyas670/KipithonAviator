@@ -59,7 +59,7 @@ def top_counts(df,x,num):
         top_values = top_values.reset_index()
         top_values.columns = [x, 'Count']
         others_df = pd.DataFrame({x: ['OTHERS'], 'Count': [others_count]})
-        top_values = top_values._append(others_df, ignore_index=True)
+        top_values = top_values.append(others_df, ignore_index=True)
         return top_values
 
 def retain_top_n_categories(df, column_name, n,new_column_name):
