@@ -754,7 +754,6 @@ The **Delayed Flights** have shown distinctive characteristics like:
                 'WIND_GUSTS': [WIND_GUSTS]})
                 
                 instance_to_predict = model[:-1].transform(df_local)
-                st.set_option('deprecation.showPyplotGlobalUse', False)
                 exp = explainer.explain_instance(instance_to_predict.values.flatten(), model.named_steps["trained_model"].predict_proba,labels=(1,))
         
                 st.subheader('Local Explanability of Model')
